@@ -1,36 +1,25 @@
 #include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
+#include <time.h>
+
+
 /**
- * main - Entry point
- * Description: checks on the last digit of the assigned var
- * Return: Always 0 (success)
- */
-
-/* more headers goes there */
-
-/* betty style doc for function main goes there */
+* main - Prints a random number decides whether it is positive,negative,orzero.
+*
+* Return: Always 0.
+*/
 int main(void)
 {
 	int n;
-	int m;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	/* your code goes there */
-	m = n % 10;
-	if (m > 5)
-	{
-		printf("Last digit of %d is %d and is greater than 5\n", n, m);
-	}
-	else if (m < 6 && m != 0)
-	{
-		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, m);
-	}
+	if (n > 0)
+		printf("%d is positive\n", n);
+	else if (n < 0)
+		printf("%d is negative\n", n);
 	else
-	{
-		printf("Last digit of %d is %d and is 0\n", n, m);
-	}
-
+		printf("%d is zero\n", n);
 	return (0);
 }
+
